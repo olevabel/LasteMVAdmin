@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "firstname": "Olev",
+        "lastname": "Abel",
+        "age": 23,
+        "gender": "poiss",
+        "county": "Käru",
+        "parentPhone": "+3725148545",
+        "parentEmail": "katrin.abel@gmail.com"
+    },
+    {
+        "id": 2,
+        "firstname": "Mari",
+        "lastname": "Maasikas",
+        "age": 14,
+        "gender": "tüdruk",
+        "county": "Kaiu",
+        "parentPhone": "+372553452434",
+        "parentEmail": "olevabel@gmail.com"
+    },
+    {
+        "id": 3,
+        "firstname": "Juku",
+        "lastname": "Juurikas",
+        "age": 11,
+        "gender": "poiss",
+        "county": "Vigala",
+        "parentPhone": "+372543923849",
+        "parentEmail": "juurikasjuku790@gmail.com"
+    },
+    {
+        "id": 4,
+        "firstname": "Tiiu",
+        "lastname": "Tuulik",
+        "age": 8,
+        "gender": "tüdruk",
+        "county": "Rapla",
+        "parentPhone": "+372594290493420",
+        "parentEmail": "ttuulik@gmail.com"
+    },
+    {
+        "id": 5,
+        "firstname": "Mart",
+        "lastname": "Mets",
+        "age": 11,
+        "gender": "poiss",
+        "county": "Raiküla",
+        "parentPhone": "+372511029312039",
+        "parentEmail": "mmets@gmail.com"
+    }
+]

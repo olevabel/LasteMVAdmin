@@ -3,20 +3,19 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     webserver = require('gulp-webserver'),
     util = require('gulp-util');
-    var runSeq = require('run-sequence')
 
 
 var port = process.env.PORT || 5000;
 // run init tasks
-gulp.task('default', ['config', 'dependencies', 'compile-ts', 'html', 'css', 'assets']);
+gulp.task('default', ['assets']);
 
-gulp.task('config', function() {
+gulp.task('config', ['dependencies'], function() {
 	gulp.src((util.env.dev ? './config/dev.ts' : './config/stage.ts'))
 		.pipe(rename('env.ts'))
 		.pipe(gulp.dest('build/app/services'));
 });
 
-gulp.task('compile-ts', function() {
+gulp.task('compile-ts', ['config'], function() {
 	var tsProject = typescript.createProject('./tsconfig.json');
 	tsProject.src('src/**/*.ts')
 		.pipe(typescript(tsProject))
@@ -37,8 +36,12 @@ gulp.task('serve', function () {
     }));
 });
 
-gulp.task("heroku:production", function() {
-  runSeq('clean', 'build', 'minify');
+gulp.task('clean', function() {
+  del('./build');
+});
+
+gulp.task("heroku:production",['default'] function() {
+  
 }); // the task does not need to do anything.
 
 
@@ -51,25 +54,25 @@ gulp.task('watch', function () {
 });
 
 // move dependencies into build dir
-gulp.task('dependencies', function () {
+gulp.task('dependencies',['clean'],  function () {
   return gulp.src(['node_modules/**'])
     .pipe(gulp.dest('build/node_modules'));
 });
 
 // move html
-gulp.task('html', function () {
+gulp.task('html', ['compile-ts'], function () {
   return gulp.src('src/**/*.html')
     .pipe(gulp.dest('build'))
 });
 
 // move css
-gulp.task('css', function () {
+gulp.task('css',['html'], function () {
   return gulp.src('src/**/*.css')
     .pipe(gulp.dest('build'))
 });
 
 // move assets
-gulp.task('assets', function () {
+gulp.task('assets',['css'], function () {
   return gulp.src('src/app/assets/images/*.jpg')
     .pipe(gulp.dest('build/app/assets/images'))
 });

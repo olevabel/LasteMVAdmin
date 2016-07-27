@@ -2,7 +2,6 @@ var gulp = require('gulp'),
 	typescript = require('gulp-typescript'),
     rename = require('gulp-rename'),
     webserver = require('gulp-webserver'),
-    del = require('del'),
     util = require('gulp-util');
 
 
@@ -26,7 +25,6 @@ gulp.task('compile-ts', ['config'], function() {
 // run development task
 gulp.task('dev', ['watch', 'serve']);
 
-gulp.task('clean')
 // serve the build dir
 gulp.task('serve', function () {
   gulp.src('build')
@@ -37,9 +35,6 @@ gulp.task('serve', function () {
     }));
 });
 
-gulp.task('clean', function() {
-  del('./build');
-});
 
 gulp.task("heroku:production",['default'], function() {
   
@@ -55,7 +50,7 @@ gulp.task('watch', function () {
 });
 
 // move dependencies into build dir
-gulp.task('dependencies',['clean'],  function () {
+gulp.task('dependencies',  function () {
   return gulp.src(['node_modules/**'])
     .pipe(gulp.dest('build/node_modules'));
 });

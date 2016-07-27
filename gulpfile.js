@@ -27,8 +27,7 @@ gulp.task('dev', ['watch', 'serve']);
 gulp.task('serve', function () {
   gulp.src('build')
     .pipe(webserver({
-      open: true
-      host:'0.0.0.0',
+      open: true, 
       port: process.env.PORT
     }));
 });

@@ -32,9 +32,8 @@ gulp.task('serve', function () {
     }));
 });
 
-gulp.task("heroku:production", function(){
-    console.log('hello'); // the task does not need to do anything.
-});
+gulp.task("heroku:production", ['default']); // the task does not need to do anything.
+
 
 // watch for changes and run the relevant task
 gulp.task('watch', function () {

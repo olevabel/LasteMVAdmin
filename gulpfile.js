@@ -40,7 +40,7 @@ gulp.task('clean', function() {
   del('./build');
 });
 
-gulp.task("heroku:production",['default'] function() {
+gulp.task("heroku:production",['default'], function() {
   
 }); // the task does not need to do anything.
 

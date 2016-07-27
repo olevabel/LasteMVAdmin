@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     util = require('gulp-util');
 
+
+var port = process.env.PORT || 5000;
 // run init tasks
 gulp.task('default', ['config', 'dependencies', 'compile-ts', 'html', 'css', 'assets']);
 
@@ -27,8 +29,7 @@ gulp.task('dev', ['watch', 'serve']);
 gulp.task('serve', function () {
   gulp.src('build')
     .pipe(webserver({
-      open: true, 
-      port: process.env.PORT
+      open: true
     }));
 });
 

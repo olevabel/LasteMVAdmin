@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 	typescript = require('gulp-typescript'),
     rename = require('gulp-rename'),
     webserver = require('gulp-webserver'),
+    var del = require('del'),
     util = require('gulp-util');
 
 

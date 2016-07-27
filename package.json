@@ -1,14 +1,12 @@
 {
     "name": "product-management",
     "version": "1.0.0",
-    "author": "Deborah Kurata",
-    "description": "Package for the Acme Product Management sample application",
+
     "scripts": {
-        "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+        "build": "gulp",
+        "start": "gulp dev",
         "tsc": "tsc",
         "tsc:w": "tsc -w",
-        "lint": "tslint ./app/**/*.ts -t verbose",
-        "lite": "lite-server",
         "typings": "typings",
         "postinstall": "typings install"
     },
@@ -23,11 +21,13 @@
         "bootstrap": "^3.3.6"
     },
     "devDependencies": {
-        "concurrently": "^2.0.0",
-        "lite-server": "^2.2.0",
-        "tslint": "^3.7.4",
         "typescript": "^1.8.10",
-        "typings": "^0.7.12"
-    },
-    "repository": {}
+        "typings": "^0.7.12",
+        "gulp": "3.9.0",
+        "gulp-typescript": "2.13.0",
+        "gulp-rename": "1.2.2",
+        "gulp-webserver": "0.9.1",
+        "gulp-util": "3.0.7"
+
+    }
 }

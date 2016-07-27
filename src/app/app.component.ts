@@ -3,10 +3,10 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import 'rxjs/Rx';   // Load all features
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { CompetitorListComponent } from './products/competitor-list.component';
-import { CompetitorService } from './products/competitor.service';
+import { CompetitorListComponent } from './competitors/competitor-list.component';
+import { CompetitorService } from './services/competitor.service';
 import { WelcomeComponent } from './home/welcome.component';
-import { CompetitorDetailComponent } from './products/competitor-detail.component';
+import { CompetitorDetailComponent } from './competitors/competitor-detail.component';
 
 @Component({
     selector: 'pm-app',
@@ -14,7 +14,6 @@ import { CompetitorDetailComponent } from './products/competitor-detail.componen
     <div>
         <nav class='navbar navbar-default'>
             <div class='container-fluid'>
-                <a class='navbar-brand'>{{pageTitle}}</a>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['Welcome']">Avaleht</a></li>
                     <li><a [routerLink]="['Competitors']">Võistlejad</a></li>

@@ -2,10 +2,10 @@ import { Component, OnInit } from 'angular2/core';
 import { RouteParams, Router } from 'angular2/router';
 
 import { ICompetitor } from './competitor';
-import { CompetitorService } from './competitor.service';
+import { CompetitorService } from '../services/competitor.service';
 
 @Component({
-    templateUrl: 'app/products/competitor-detail.component.html',
+    templateUrl: 'app/competitors/competitor-detail.component.html',
 })
 export class CompetitorDetailComponent implements OnInit {
     pageTitle: string = 'Võistleja andmed';

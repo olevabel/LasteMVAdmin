@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-import { ICompetitor } from './competitor';
+import { ICompetitor } from '../competitors/competitor';
 
 @Injectable()
 export class CompetitorService {

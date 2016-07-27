@@ -3,11 +3,11 @@ import {ROUTER_DIRECTIVES, Router, RouteParams} from 'angular2/router';
 
 import {ICompetitor} from './competitor';
 import {CompetitorFilterPipe} from './competitor-filter.pipe';
-import {CompetitorService} from './competitor.service';
+import {CompetitorService} from '../services/competitor.service';
 
 @Component({
-    templateUrl: 'app/products/competitor-list.component.html',
-    styleUrls: ['app/products/competitor-list.component.css'],
+    templateUrl: 'app/competitors/competitor-list.component.html',
+    styleUrls: ['app/competitors/competitor-list.component.css'],
     pipes: [CompetitorFilterPipe],
     directives: [ROUTER_DIRECTIVES]
 })

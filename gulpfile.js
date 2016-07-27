@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     webserver = require('gulp-webserver'),
     util = require('gulp-util');
+    var runSeq = require('run-sequence')
 
 
 var port = process.env.PORT || 5000;
@@ -25,6 +26,7 @@ gulp.task('compile-ts', function() {
 // run development task
 gulp.task('dev', ['watch', 'serve']);
 
+gulp.task('clean')
 // serve the build dir
 gulp.task('serve', function () {
   gulp.src('build')
@@ -36,7 +38,7 @@ gulp.task('serve', function () {
 });
 
 gulp.task("heroku:production", function() {
-  console.log("hello");
+  runSeq('clean', 'build', 'minify');
 }); // the task does not need to do anything.
 
 

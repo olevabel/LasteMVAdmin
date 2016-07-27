@@ -1,3 +1,3 @@
 export class Environment {
-    api_url: string = "http://localhost:3000";
+    api_url: string = "http://localhost:8080";
 }

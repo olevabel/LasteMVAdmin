@@ -4,6 +4,7 @@ import {ROUTER_DIRECTIVES, Router, RouteParams} from 'angular2/router';
 import {ICompetitor} from './competitor';
 import {CompetitorFilterPipe} from './competitor-filter.pipe';
 import {CompetitorService} from '../services/competitor.service';
+import {IResult} from "../results/IResult";
 
 @Component({
     templateUrl: 'app/competitors/competitor-list.component.html',
@@ -15,7 +16,7 @@ export class CompetitorListComponent implements OnInit {
     pageTitle:string = 'Võistlejad';
     listFilter:string = '';
     errorMessage:string;
-    competitors:ICompetitor[];
+    competitors:IResult[];
 
     constructor(private _competitorService:CompetitorService, private _router:Router, private _routeParams:RouteParams) {
 

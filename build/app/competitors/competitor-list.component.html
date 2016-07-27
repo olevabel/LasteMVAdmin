@@ -31,10 +31,10 @@
                 </thead>
                 <tbody>
                 <tr class='tableRow' *ngFor='#competitor of competitors | competitorFilter:listFilter' (click)="onClick(competitor)" >
-                    <td>{{competitor.firstname}}</td>
-                    <td>{{ competitor.lastname}}</td>
-                    <td>{{ competitor.age }}</td>
-                    <td>{{ competitor.gender}}</td>
+                    <td>{{competitor.sprint}}</td>
+                    <td>{{ competitor.longJump}}</td>
+                    <td>{{ competitor.ball }}</td>
+                    <td>{{ competitor.running}}</td>
 
                 </tr>
                 </tbody>

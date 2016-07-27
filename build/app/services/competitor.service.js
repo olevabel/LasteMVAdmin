@@ -27,10 +27,9 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             CompetitorService = (function () {
                 function CompetitorService(_http) {
                     this._http = _http;
-                    this._competitorUrl = 'api/products/products.json';
                 }
                 CompetitorService.prototype.getCompetitors = function () {
-                    return this._http.get(this._competitorUrl)
+                    return this._http.get("https://lastemv.herokuapp.com/results")
                         .map(function (response) { return response.json(); })
                         .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
                         .catch(this.handleError);

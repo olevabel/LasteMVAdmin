@@ -3,13 +3,14 @@ import { RouteParams, Router } from 'angular2/router';
 
 import { ICompetitor } from './competitor';
 import { CompetitorService } from '../services/competitor.service';
+import {IResult} from "../results/IResult";
 
 @Component({
     templateUrl: 'app/competitors/competitor-detail.component.html',
 })
 export class CompetitorDetailComponent implements OnInit {
     pageTitle: string = 'Võistleja andmed';
-    competitor: ICompetitor;
+    competitor: IResult;
     errorMessage: string;
 
     constructor(private _competitorService: CompetitorService,

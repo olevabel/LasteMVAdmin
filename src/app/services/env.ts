@@ -1,3 +1,3 @@
 export class Environment {
-    api_url: string = "";
+    public static api_url: string = "";
 }

@@ -3,15 +3,16 @@ import { Http, Response } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
 import { ICompetitor } from '../competitors/competitor';
+import {Environment} from "./env";
 
 @Injectable()
 export class CompetitorService {
-    private _competitorUrl = 'api/products/products.json';
+    private _competitorUrl = Environment.api_url;
 
     constructor(private _http: Http) { }
 
     getCompetitors(): Observable<ICompetitor[]> {
-        return this._http.get(this._competitorUrl)
+        return this._http.get(this._competitorUrl + "/competitors")
             .map((response: Response) => <ICompetitor[]> response.json())
             .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);

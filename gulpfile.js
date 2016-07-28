@@ -5,14 +5,13 @@ var gulp = require('gulp'),
     util = require('gulp-util');
 
 
-var port = process.env.PORT || 5000;
 // run init tasks
 gulp.task('default', ['assets']);
 
 gulp.task('config', ['dependencies'], function() {
 	gulp.src((util.env.dev ? './config/dev.ts' : './config/stage.ts'))
 		.pipe(rename('env.ts'))
-		.pipe(gulp.dest('build/app/services'));
+		.pipe(gulp.dest('src/app/services'));
 });
 
 gulp.task('compile-ts', ['config'], function() {
@@ -37,7 +36,7 @@ gulp.task('serve', function () {
 
 
 gulp.task("heroku:production",['default'], function() {
-  
+
 }); // the task does not need to do anything.
 
 

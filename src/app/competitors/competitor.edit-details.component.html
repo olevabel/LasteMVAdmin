@@ -1,0 +1,40 @@
+<div class='panel panel-primary' *ngIf='competitor'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle + ': ' + competitor.firstname +' ' + competitor.lastname }}
+    </div>
+
+    <form>
+
+        <label>Stardinumber:</label>
+        <input type="number">
+
+
+        <label>Eesnimi:</label>
+        <input type="text">
+
+
+        <label>Perenimi:</label>
+        <input type="text">
+
+        <label>Vanus:</label>
+        <input type="number">
+
+
+        <label>Sugu:</label>
+        <input type="text">
+
+        <label>Koduvald:</label>
+        <input type="text">
+
+
+        <label>Vanema telefon:</label>
+        <input type="text">
+
+
+        <label>Vanema email:</label>
+        <input type="text">
+
+        <button type="submit">Sisesta</button>
+
+    </form>
+</div>

@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 
 // run init tasks
-gulp.task('default', ['assets']);
+gulp.task('default', ['assets', 'html','css', 'compile-ts']);
 
 gulp.task('config', ['dependencies'], function() {
 	gulp.src((util.env.dev ? './config/dev.ts' : './config/stage.ts'))
@@ -55,19 +55,19 @@ gulp.task('dependencies',  function () {
 });
 
 // move html
-gulp.task('html', ['compile-ts'], function () {
+gulp.task('html', function () {
   return gulp.src('src/**/*.html')
     .pipe(gulp.dest('build'))
 });
 
 // move css
-gulp.task('css',['html'], function () {
+gulp.task('css', function () {
   return gulp.src('src/**/*.css')
     .pipe(gulp.dest('build'))
 });
 
 // move assets
-gulp.task('assets',['css'], function () {
+gulp.task('assets', function () {
   return gulp.src('src/app/assets/images/*.jpg')
     .pipe(gulp.dest('build/app/assets/images'))
 });

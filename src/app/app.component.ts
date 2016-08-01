@@ -7,6 +7,7 @@ import { CompetitorListComponent } from './competitors/competitor-list.component
 import { CompetitorService } from './services/competitor.service';
 import { WelcomeComponent } from './home/welcome.component';
 import { CompetitorDetailComponent } from './competitors/competitor-detail.component';
+import {CompetitorEditDetailsComponent} from "./competitors/competitor.edit-details.component";
 
 @Component({
     selector: 'pm-app',
@@ -33,7 +34,8 @@ import { CompetitorDetailComponent } from './competitors/competitor-detail.compo
 @RouteConfig([
     { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
     { path: '/competitors', name: 'Competitors', component: CompetitorListComponent },
-    { path: '/competitor/:id', name: 'CompetitorDetail', component: CompetitorDetailComponent }
+    { path: '/competitor/:id', name: 'CompetitorDetail', component: CompetitorDetailComponent },
+    { path: '/competitor/:id/edit', name: 'CompetitorEditDetails', component: CompetitorEditDetailsComponent }
 ])
 export class AppComponent {
     pageTitle: string = 'Laste mitmevõistlus';

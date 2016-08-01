@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { ICompetitor } from '../competitors/competitor';
 import {Environment} from "./env";
+import {Error} from "app/util/Error";
 
 @Injectable()
 export class CompetitorService {
@@ -23,10 +24,22 @@ export class CompetitorService {
             .map((competitors: ICompetitor[]) => competitors.find(c => c.id === id));
     }
 
+    editCompetitor(competitor: ICompetitor): Observable<ICompetitor> {
+        let requestBody = JSON.stringify(competitor);
+        return this._http.put(this._competitorUrl + "/competitors", requestBody).map((response: Response) => {
+            this.checkResponse(response);
+            return response.json();
+        }).catch(this.handleError);
+    }
     private handleError(error: Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
+    }
+    private checkResponse(res: Response) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error(res.status, 'Bad response status:' + res.status);
+        }
     }
 }

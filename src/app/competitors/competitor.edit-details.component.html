@@ -1,0 +1,17 @@
+<div class='panel panel-primary' *ngIf='competitor'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle + ': ' + competitor.firstname +' ' + competitor.lastname }}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>

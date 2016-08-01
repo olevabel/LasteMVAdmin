@@ -36,4 +36,8 @@ export class CompetitorDetailComponent implements OnInit {
         this._router.navigate(['Competitors']);
     }
 
+    onEdit(): void {
+        this._router.navigate(['CompetitorEditDetails', {id: this.competitor.id}]);
+    }
+
 }

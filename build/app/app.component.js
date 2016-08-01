@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router', './competitors/competitor-list.component', './services/competitor.service', './home/welcome.component', './competitors/competitor-detail.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router', './competitors/competitor-list.component', './services/competitor.service', './home/welcome.component', './competitors/competitor-detail.component', "./competitors/competitor.edit-details.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1, competitor_list_component_1, competitor_service_1, welcome_component_1, competitor_detail_component_1;
+    var core_1, http_1, router_1, competitor_list_component_1, competitor_service_1, welcome_component_1, competitor_detail_component_1, competitor_edit_details_component_1;
     var AppComponent;
     return {
         setters:[
@@ -35,6 +35,9 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
             },
             function (competitor_detail_component_1_1) {
                 competitor_detail_component_1 = competitor_detail_component_1_1;
+            },
+            function (competitor_edit_details_component_1_1) {
+                competitor_edit_details_component_1 = competitor_edit_details_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -53,7 +56,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'angular2/router',
                     router_1.RouteConfig([
                         { path: '/welcome', name: 'Welcome', component: welcome_component_1.WelcomeComponent, useAsDefault: true },
                         { path: '/competitors', name: 'Competitors', component: competitor_list_component_1.CompetitorListComponent },
-                        { path: '/competitor/:id', name: 'CompetitorDetail', component: competitor_detail_component_1.CompetitorDetailComponent }
+                        { path: '/competitor/:id', name: 'CompetitorDetail', component: competitor_detail_component_1.CompetitorDetailComponent },
+                        { path: '/competitor/:id/edit', name: 'CompetitorEditDetails', component: competitor_edit_details_component_1.CompetitorEditDetailsComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

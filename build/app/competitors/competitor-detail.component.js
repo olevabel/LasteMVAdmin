@@ -46,6 +46,9 @@ System.register(['angular2/core', 'angular2/router', '../services/competitor.ser
                 CompetitorDetailComponent.prototype.onBack = function () {
                     this._router.navigate(['Competitors']);
                 };
+                CompetitorDetailComponent.prototype.onEdit = function () {
+                    this._router.navigate(['CompetitorEditDetails', { id: this.competitor.id }]);
+                };
                 CompetitorDetailComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/competitors/competitor-detail.component.html',

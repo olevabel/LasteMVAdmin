@@ -4,8 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { ICompetitor } from '../competitors/competitor';
 import {Environment} from "./env";
-import {Error} from "app/util/Error";
-
+import {Error} from '../util/Error';
 @Injectable()
 export class CompetitorService {
     private _competitorUrl = Environment.api_url;

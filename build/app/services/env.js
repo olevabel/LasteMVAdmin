@@ -7,8 +7,8 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             Environment = (function () {
                 function Environment() {
-                    this.api_url = "";
                 }
+                Environment.api_url = "https://lastemv.herokuapp.com";
                 return Environment;
             }());
             exports_1("Environment", Environment);

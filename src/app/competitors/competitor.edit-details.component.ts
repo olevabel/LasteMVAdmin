@@ -1,11 +1,11 @@
 /**
  * Created by olevabel on 8/1/16.
  */
-import {Component} from "../../../build/node_modules/angular2/src/core/metadata";
-import {OnInit} from "../../../build/node_modules/angular2/src/core/linker/interfaces";
+
 import {ICompetitor} from "./competitor";
 import {CompetitorService} from "../services/competitor.service";
 import {Router, RouteParams} from "angular2/router";
+import {Component, OnInit} from "angular2/core";
 @Component({
     selector:'competitor-edit-details',
     templateUrl: 'app/competitor.edit-details.component.html'

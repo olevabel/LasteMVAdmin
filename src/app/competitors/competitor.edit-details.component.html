@@ -5,7 +5,28 @@
 
     <div class='panel-body'>
         <div class='row'>
-            <div> TERE! </div>
+            <form>
+                <div class="form-group">
+                    <label for="firstname">Eesnimi</label>
+                    <input type="text" [(ngModel)]="competitor.firstname" class="form-control" id="firstname"
+                           name="firstname"/>competitor.firstname
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Perenimi</label>
+                    <input type="text" [(ngModel)]="competitor.lastname" class="form-control" id="lastname"
+                           name="lastname"/>competitor.lastname
+                </div>
+                <div class="form-group">
+                    <label for="age">Vanus</label>
+                    <input type="text" [(ngModel)]="competitor.age" class="form-control" id="age"
+                           name="age"/>competitor.age
+                </div>
+                <div class="form-group">
+                    <label for="gender">Sugu</label>
+                    <input type="text" [(ngModel)]="competitor.gender" class="form-control" id="gender"
+                           name="gemder"/>competitor.gender
+                </div>
+            </form>
         </div>
     </div>
 

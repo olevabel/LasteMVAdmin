@@ -18,6 +18,7 @@ export class CompetitorEditDetailsComponent implements OnInit{
     }
     competitor: ICompetitor;
     errorMessage: string;
+    pageTitle: string = 'Muuda andmeid';
 
     ngOnInit() {
         if (!this.competitor) {

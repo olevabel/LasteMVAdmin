@@ -1,14 +1,14 @@
 import { Injectable } from 'angular2/core';
-import {Http, Response, Headers} from 'angular2/http';
+import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
 import { ICompetitor } from '../competitors/competitor';
 import {Environment} from "./env";
 import {Error} from '../util/Error';
-import {RequestOptionsArgs} from "../../../build/node_modules/angular2/src/http/interfaces";
 @Injectable()
 export class CompetitorService {
     private _competitorUrl = Environment.api_url;
+
     constructor(private _http: Http) {
     }
 
@@ -26,8 +26,10 @@ export class CompetitorService {
 
     editCompetitor(competitor: ICompetitor): Observable<ICompetitor> {
         let requestBody = JSON.stringify(competitor);
+        let headers = new Headers({'Content-Type' : 'application/json'});
+        let options = new RequestOptions({headers : headers});
         console.log("editCompetitor - start with competitor " + requestBody );
-        return this._http.post(this._competitorUrl + "/competitors/edit", requestBody).map((response: Response) => {
+        return this._http.post(this._competitorUrl + "/competitors/edit", requestBody, options).map((response: Response) => {
             this.checkResponse(response);
             console.log("editCompetitor - response ");
             return response.json();

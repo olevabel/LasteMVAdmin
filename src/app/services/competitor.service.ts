@@ -40,6 +40,7 @@ export class CompetitorService {
         return Observable.throw(error.json().error || 'Server error');
     }
     private checkResponse(res: Response) {
+        console.log("checkResponse - start");
         if (res.status < 200 || res.status >= 300) {
             throw new Error(res.status, 'Bad response status:' + res.status);
         }

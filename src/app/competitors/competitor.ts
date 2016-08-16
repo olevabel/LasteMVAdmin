@@ -8,5 +8,7 @@ export interface ICompetitor {
     county: string;
     parentPhone: string;
     parentEmail: string;
+
+    
 }
 

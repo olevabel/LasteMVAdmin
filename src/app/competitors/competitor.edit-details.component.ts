@@ -39,7 +39,7 @@ export class CompetitorEditDetailsComponent implements OnInit{
         this._router.navigate(['CompetitorDetail', {id: this.competitor.id}]);
     }
     submitEdition() {
-        this._competitorService.editCompetitor(this.competitor);
+        this._competitorService.editCompetitor(this.competitor).subscribe();
     }
 
 }

@@ -8,7 +8,7 @@ import {Router, RouteParams} from "angular2/router";
 import {Component, OnInit} from "angular2/core";
 @Component({
     selector:'competitor-edit-details',
-    templateUrl: 'app/competitor.edit-details.component.html'
+    templateUrl: 'app/competitors/competitor.edit-details.component.html'
 })
 export class CompetitorEditDetailsComponent implements OnInit{
 

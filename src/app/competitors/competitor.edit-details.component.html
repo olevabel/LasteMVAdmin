@@ -9,22 +9,22 @@
                 <div class="form-group">
                     <label for="firstname">Eesnimi</label>
                     <input type="text" [(ngModel)]="competitor.firstname" class="form-control" id="firstname"
-                           name="firstname"/>competitor.firstname
+                           name="firstname"/>
                 </div>
                 <div class="form-group">
                     <label for="lastname">Perenimi</label>
                     <input type="text" [(ngModel)]="competitor.lastname" class="form-control" id="lastname"
-                           name="lastname"/>competitor.lastname
+                           name="lastname"/>
                 </div>
                 <div class="form-group">
                     <label for="age">Vanus</label>
                     <input type="text" [(ngModel)]="competitor.age" class="form-control" id="age"
-                           name="age"/>competitor.age
+                           name="age"/>
                 </div>
                 <div class="form-group">
                     <label for="gender">Sugu</label>
                     <input type="text" [(ngModel)]="competitor.gender" class="form-control" id="gender"
-                           name="gemder"/>competitor.gender
+                           name="gemder"/>
                 </div>
             </form>
         </div>
@@ -32,7 +32,10 @@
 
     <div class='panel-footer'>
         <a class='btn btn-default' (click)='onBack()' style='width:80px'>
-            <i class='glyphicon glyphicon-chevron-left'></i> Back
+            <i class='glyphicon glyphicon-chevron-left'></i> Tagasi
+        </a>
+        <a class="btn btn-default" (click)="submitEdition()">
+            <i class="glyphicon glyphicon-ok"></i>Kinnita
         </a>
     </div>
 </div>

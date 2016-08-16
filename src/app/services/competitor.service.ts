@@ -26,7 +26,7 @@ export class CompetitorService {
 
     editCompetitor(competitor: ICompetitor): Observable<ICompetitor> {
         let requestBody = JSON.stringify(competitor);
-        console.log("editCompetitor - start with competitor " + competitor.age );
+        console.log("editCompetitor - start with competitor " + requestBody );
         return this._http.post(this._competitorUrl + "/competitors/edit", requestBody).map((response: Response) => {
             this.checkResponse(response);
             console.log("editCompetitor - response ");

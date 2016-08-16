@@ -34,6 +34,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', "./env", '
                 function CompetitorService(_http) {
                     this._http = _http;
                     this._competitorUrl = env_1.Environment.api_url;
+                    this.headers = new Head;
                 }
                 CompetitorService.prototype.getCompetitors = function () {
                     return this._http.get(this._competitorUrl + "/competitors")

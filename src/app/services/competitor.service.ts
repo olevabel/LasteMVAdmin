@@ -1,18 +1,20 @@
 import { Injectable } from 'angular2/core';
-import { Http, Response } from 'angular2/http';
+import {Http, Response, Headers} from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
 import { ICompetitor } from '../competitors/competitor';
 import {Environment} from "./env";
 import {Error} from '../util/Error';
+import {RequestOptionsArgs} from "../../../build/node_modules/angular2/src/http/interfaces";
 @Injectable()
 export class CompetitorService {
     private _competitorUrl = Environment.api_url;
-
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _requestOptionArgs: RequestOptionsArgs) {
+        _requestOptionArgs.headers.append('Access-Control-Allow-Origin', '*');
+    }
 
     getCompetitors(): Observable<ICompetitor[]> {
-        return this._http.get(this._competitorUrl + "/competitors")
+        return this._http.get(this._competitorUrl + "/competitors", this._requestOptionArgs)
             .map((response: Response) => <ICompetitor[]> response.json())
             .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
@@ -25,7 +27,7 @@ export class CompetitorService {
 
     editCompetitor(competitor: ICompetitor): Observable<ICompetitor> {
         let requestBody = JSON.stringify(competitor);
-        return this._http.put(this._competitorUrl + "/competitors", requestBody).map((response: Response) => {
+        return this._http.put(this._competitorUrl + "/competitors", requestBody, this._requestOptionArgs).map((response: Response) => {
             this.checkResponse(response);
             return response.json();
         }).catch(this.handleError);

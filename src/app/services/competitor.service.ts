@@ -26,8 +26,10 @@ export class CompetitorService {
 
     editCompetitor(competitor: ICompetitor): Observable<ICompetitor> {
         let requestBody = JSON.stringify(competitor);
+        console.log("editCompetitor - start");
         return this._http.put(this._competitorUrl + "/competitors", requestBody).map((response: Response) => {
             this.checkResponse(response);
+            console.log("editCompetitor - response ");
             return response.json();
         }).catch(this.handleError);
     }
